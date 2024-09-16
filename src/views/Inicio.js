@@ -3,18 +3,20 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button } from "react-native-paper";
 
-const Inicio = () => {
-    const crearCita = () => {
-        
-    }
-    
+const Inicio = ({ navigation }) => {
+  const { navigate } = navigation;
+  
+  const crearCita = () => {
+    navigate("FormularioCita");
+  };
+
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <Text style={styles.title}>
         Administrador de Citas {""}
         <Text style={styles.tituloBold}>Veterinaria</Text>
       </Text>
-      <Button mode='contained'  icon='plus' onPress={crearCita}>
+      <Button mode="contained" icon="plus" onPress={crearCita}>
         Nueva Cita
       </Button>
     </SafeAreaView>
