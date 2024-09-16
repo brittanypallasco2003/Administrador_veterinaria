@@ -3,8 +3,16 @@ export const CitasContext = createContext();
 
 const CitasProvider = ({ children }) => {
   const [listadoPacientes, setlistadoPacientes] = useState([]);
+  const [mostrarAlerta, setmostrarAlerta] = useState(false);
   return (
-    <CitasContext.Provider value={{ listadoPacientes, setlistadoPacientes }}>
+    <CitasContext.Provider
+      value={{
+        listadoPacientes,
+        setlistadoPacientes,
+        mostrarAlerta,
+        setmostrarAlerta,
+      }}
+    >
       {children}
     </CitasContext.Provider>
   );
